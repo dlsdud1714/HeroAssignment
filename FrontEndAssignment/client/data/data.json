@@ -1,0 +1,48 @@
+{
+  "powerFlow": [
+    {
+      "id": 1,
+      "type": "microgrid",
+      "label": "MICROGRID",
+      "units": "kW",
+      "Timestamp": "2023-06-07T23:06:10.001Z"
+    },
+
+    {
+      "id": 2,
+      "type": "solar",
+      "label": "SOLAR",
+      "units": "kW",
+      "value": -10,
+      "socValue": 0,
+      "Timestamp": "2023-06-07T23:06:10.001Z"
+    },
+    {
+      "id": 3,
+      "type": "battery",
+      "label": "BATTERY",
+      "units": "kW",
+      "value": -30,
+      "socValue": 21.6,
+      "Timestamp": "2023-06-07T23:06:10.001Z"
+    },
+    {
+      "id": 4,
+      "type": "ev",
+      "label": "EV",
+      "units": "kW",
+      "value": -10,
+      "socValue": 0,
+      "Timestamp": "2023-06-07T23:06:10.001Z"
+    },
+    {
+      "id": 5,
+      "type": "load",
+      "label": "LOAD",
+      "units": "kW",
+      "value": 20,
+      "socValue": 0,
+      "Timestamp": "2023-06-07T23:06:10.001Z"
+    }
+  ]
+}
