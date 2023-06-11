@@ -50,7 +50,8 @@ function EnergySources() {
   };
   return (
     <section>
-      <h1> A List of Energy Resources</h1>
+      <h4>Assignment1</h4>
+      <h5> A List of Energy Resources</h5>
       <table>
         <thead>
           <tr>

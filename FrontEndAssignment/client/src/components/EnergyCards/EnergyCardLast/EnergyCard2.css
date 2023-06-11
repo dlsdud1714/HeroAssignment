@@ -1,0 +1,105 @@
+/* card */
+.card{
+    color: #636363;
+    background-color: #eaedf5;
+    margin:1.7em;
+    width: 14rem;
+    aspect-ratio:1;
+    box-shadow: inset 1.2rem 1.2rem 1.2rem rgba(0,0,0,0.05),
+    1.5rem 2em 1.2em rgba(0,0,0,0.05),
+    1.5rem 1.7rem 1.5rem rgba(0,0,0,0.05),
+    inset -1.2rem -1.2rem 1.5rem rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    position:relative;
+}
+.card:nth-child(1){
+    border-radius: 65% 46% 66% 48% / 55% 62% 48% 65%;          
+}
+.card:nth-child(2){
+    border-radius: 66% 40% 68% 46% / 48% 38% 75% 62% ;          
+}
+.card:nth-child(3){
+    border-radius: 45% 66% 46% 60% / 55% 50% 55% 65%;          
+}
+.card__c1{
+    flex:5;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card__c2{
+    flex:2;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding:0;
+}
+/* card containers */
+.card__iconTextContainer{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+}
+.card__gaugeIconContainer{
+    position:relative;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card__iconsContainer{
+    position: absolute;
+    top: 24%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    gap:-3em;
+}
+.card__textContainer{
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+}
+/* card icon */
+.card__icon{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.card__icon--primary{
+    font-size: 4rem;
+}
+.card__icon--secondary{
+    font-size: 1.4rem;
+}
+.icon--overlap{
+    position: relative;
+    left: -0.15em
+}
+@keyframes flicker{
+    0% {opacity:1;}
+    10% {opacity: 1;}
+    20% {opacity:0;}
+}
+.icon--flickering{
+ animation: flicker 02s infinite;
+}
+/* card text */
+.card__text{
+    text-align: center;
+}
+.card__text--primary{
+
+}
+.card__text--secondary{
+    color:#eaedf5
+}
+/* guage */
+.card__gauge{
+    position: absolute;
+  
+}

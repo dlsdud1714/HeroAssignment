@@ -1,4 +1,4 @@
-.card{
+.card1{
     color: rgb(255, 252, 238);
     margin:1.7em;
     width: 14rem;
@@ -7,7 +7,7 @@
     flex-direction: column;
     position:relative;
 }
-.card::before{
+.card1::before{
     content:'';
     position:absolute;
     bottom:-1.5rem;
@@ -19,12 +19,12 @@
     z-index: -1;
     filter: blur(3px)
 }
-.card__c1{
+.card1__c1{
     flex:5;
     position: relative;
     border-radius: 10000em 10000em 0 0 ;
 }
-.card__c2{
+.card1__c2{
     flex:2.15;
     flex-direction: column;
     display: flex;
@@ -32,7 +32,7 @@
     align-items: center;
     border-radius: 0 0 1em 1em;
 }
-.card__iconTextContainer{
+.card1__iconTextContainer{
     position: absolute;
     top: 55%;
     left: 50%;
@@ -41,7 +41,7 @@
     flex-direction: column;
     gap:0.3em;
 }
-.card__iconsContainer{
+.card1__iconsContainer{
     position: absolute;
     top: 33%;
     left: 73%;
@@ -50,18 +50,18 @@
     flex-direction: row;
     gap:-3em;
 }
-.card__icon{
+.card1__icon{
     display: flex;
     align-items: flex-start;
     justify-content: center;
 }
-.card__icon--primary{
+.card1__icon--primary{
     font-size: 4rem;
 }
-.card__icon--secondary{
+.card1__icon--secondary{
     font-size: 1.4rem;
 }
-.icon--overlap{
+.icon1--overlap{
     position: relative;
     left: -0.15em
 }
@@ -70,13 +70,13 @@
     10% {opacity: 1;}
     20% {opacity:0;}
 }
-.icon--flickering{
+.icon1--flickering{
  animation: flicker 02s infinite;
 }
-.card__text{
+.card1__text{
     text-align: center;
 }
-.card__gauge{
+.card1__gauge{
     position: absolute;
   
 }

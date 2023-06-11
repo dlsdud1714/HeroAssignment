@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import EnergyCard from "./EnergyCard/EnergyCard";
+import EnergyCard2 from "./EnergyCardLast/EnergyCard2";
+import EnergyCard1 from "./EnergyCardFirst/EnergyCard1";
 import { FaSolarPanel } from "react-icons/fa";
 import { MdOutlineElectricCar } from "react-icons/md";
 import { TbBattery2 } from "react-icons/tb";
@@ -12,7 +13,6 @@ import loadImage from "../../images/img-load.jpg";
 import microgridImage from "../../images/img-microgrid.jpg";
 import evImage from "../../images/img-ev.jpg";
 import "./EnergyCards.css";
-import Gauge from "./EnergyCard/Gauge/Gauge";
 
 function EnergyCards() {
   const [energySources, setEnergySources] = useState([]);
@@ -24,7 +24,6 @@ function EnergyCards() {
         const response = await axios.get("/powerFlow");
         const data = response.data;
         //update icons
-        console.log("raw data:", data);
         updateIconImgColor(data);
         //update microgrid value
         updateMicrogrid(data);
@@ -45,7 +44,7 @@ function EnergyCards() {
       switch (src.type.toLowerCase()) {
         case "solar":
           src.icon = <FaSolarPanel />;
-          src.colorRGB = "189, 214, 36";
+          src.colorRGB = "170, 192, 30";
           src.image = solarImage;
           break;
         case "battery":
@@ -60,7 +59,7 @@ function EnergyCards() {
           break;
         case "load":
           src.icon = <BsHouseDoor />;
-          src.colorRGB = "255, 192, 71";
+          src.colorRGB = "239, 173, 45";
           src.image = loadImage;
           break;
         case "microgrid":
@@ -98,24 +97,53 @@ function EnergyCards() {
     });
     return newArrAsc;
   };
+
   return (
-    <section className="section__cards">
-      {energySources.length !== 0 && (
-        <div className="cards__container">
-          <div className="cards__row cards__row__1">
-            {energySources.slice(0, 2).map((src, index) => {
-              return <EnergyCard key={`energy-card-${index}`} source={src} />;
-            })}
+    <>
+      <section className="section__cards">
+        <h4>Assignment1 Bonus (1)</h4>
+        {energySources.length !== 0 && (
+          <div className="cards__container">
+            <div className="cards__row cards__row__1">
+              {energySources.slice(0, 2).map((src, index) => {
+                return (
+                  <EnergyCard2 key={`energy-card-${index}`} source={src} />
+                );
+              })}
+            </div>
+            <div className="cards__row cards__row__2">
+              {energySources.slice(2).map((src, index) => {
+                return (
+                  <EnergyCard2 key={`energy-card-${index}`} source={src} />
+                );
+              })}
+            </div>
           </div>
-          <div className="cards__row cards__row__2">
-           
-            {energySources.slice(2).map((src, index) => {
-              return <EnergyCard key={`energy-card-${index}`} source={src} />;
-            })}
+        )}
+      </section>
+
+      <section className="section__cards">
+      <h4>Assignment1 Bonus (2)</h4>
+        {energySources.length !== 0 && (
+          <div className="cards__container">
+            <div className="cards__row cards__row__1">
+              {energySources.slice(0, 2).map((src, index) => {
+                return (
+                  <EnergyCard1 key={`energy-card-${index}`} source={src} />
+                );
+              })}
+            </div>
+            <div className="cards__row cards__row__2">
+              {energySources.slice(2).map((src, index) => {
+                return (
+                  <EnergyCard1 key={`energy-card-${index}`} source={src} />
+                );
+              })}
+            </div>
           </div>
-        </div>
-      )}
-    </section>
+        )}
+      </section>
+    </>
   );
 }
 
