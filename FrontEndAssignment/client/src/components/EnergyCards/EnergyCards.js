@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import EnergyCard from "./EnergyCard/EnergyCard";
-import { FaSolarPanel, FaBatteryHalf } from "react-icons/fa";
-import { MdOutlineElectricCar, MdOutlineSolarPower } from "react-icons/md";
+import { FaSolarPanel } from "react-icons/fa";
+import { MdOutlineElectricCar } from "react-icons/md";
 import { TbBattery2 } from "react-icons/tb";
 import { BsHouseDoor } from "react-icons/bs";
 import { TiFlowChildren } from "react-icons/ti";
@@ -12,6 +12,7 @@ import loadImage from "../../images/img-load.jpg";
 import microgridImage from "../../images/img-microgrid.jpg";
 import evImage from "../../images/img-ev.jpg";
 import "./EnergyCards.css";
+import Gauge from "./EnergyCard/Gauge/Gauge";
 
 function EnergyCards() {
   const [energySources, setEnergySources] = useState([]);
@@ -44,32 +45,32 @@ function EnergyCards() {
       switch (src.type.toLowerCase()) {
         case "solar":
           src.icon = <FaSolarPanel />;
-          src.color = "#B3CB1E";
+          src.colorRGB = "189, 214, 36";
           src.image = solarImage;
           break;
         case "battery":
           src.icon = <TbBattery2 />;
-          src.color = "#FF8F1F";
+          src.colorRGB = "255, 143, 31";
           src.image = batteryImage;
           break;
         case "ev":
           src.icon = <MdOutlineElectricCar />;
-          src.color = "#476FFF";
+          src.colorRGB = "71, 111, 255";
           src.image = evImage;
           break;
         case "load":
           src.icon = <BsHouseDoor />;
-          src.color = "#FFC047";
+          src.colorRGB = "255, 192, 71";
           src.image = loadImage;
           break;
         case "microgrid":
           src.icon = <TiFlowChildren />;
-          src.color = "#000000";
+          src.colorRGB = "0,0,0";
           src.image = microgridImage;
           break;
         default:
           src.icon = null;
-          src.color = null;
+          src.colorRGB = null;
       }
     });
   };
@@ -107,6 +108,7 @@ function EnergyCards() {
             })}
           </div>
           <div className="cards__row cards__row__2">
+           
             {energySources.slice(2).map((src, index) => {
               return <EnergyCard key={`energy-card-${index}`} source={src} />;
             })}
